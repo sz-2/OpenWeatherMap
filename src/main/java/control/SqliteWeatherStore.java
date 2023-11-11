@@ -32,8 +32,8 @@ public class SqliteWeatherStore implements WeatherStore{
 	@Override
 	public void createTable(Statement statement, String tableName) throws SQLException {
 		statement.execute("CREATE TABLE IF NOT EXISTS " + tableName +
-				" (name TEXT PRIMARY KEY," +
-				"ts TIMESTAMP," +
+				" (" +
+				"ts TEXT," +
 				"temperature REAL," +
 				"rain REAL REAL,"+
 				"humidity REAL,"+
@@ -44,18 +44,21 @@ public class SqliteWeatherStore implements WeatherStore{
 
 	@Override
 	public void insert(Statement statement, String tableName, Weather weather) throws SQLException {
-		 statement.execute(String.format(
-				 "INSERT INTO %s (name, ts, temperature, humidity, rain, clouds, windSpeed) " +
-						 "VALUES(%s, %s, %s, %s, %s, %s, %s);",
-				 weather.getLocation().getName(),
-				 weather.getTs().toString(),
-				 weather.getTemperature(),
-				 weather.getHumidity(),
-				 weather.getRain(),
-				 weather.getClouds(),
-				 weather.getWindSpeed()
-				 )
-		 );
+		String sentenceSql = String.format(
+				"INSERT INTO %s (ts, temperature, humidity, rain, clouds, windSpeed) " +
+						"VALUES ('%s', %s, %s, %s, %s, %s);",
+				tableName,
+				weather.getTs(),
+				weather.getTemperature(),
+				weather.getHumidity(),
+				weather.getRain(),
+				weather.getClouds(),
+				weather.getWindSpeed()
+		);
+
+
+		 statement.execute(sentenceSql);
+
 	}
 
 }

@@ -48,7 +48,7 @@ public class WeatherController {
 			Statement statement = connection.createStatement();
 			for(Location location : this.locationList){
 				for (Weather weather :  weathersupplier.getWeatherList(location,instantsList)){
-					weatherstore.insert(statement, location.getName(),weather);
+					weatherstore.insert(statement, location.getName(), weather);
 				}
 			}
 		} catch (SQLException e) {
