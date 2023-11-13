@@ -22,22 +22,18 @@ public class Main {
 		canaryLocationList.add(new Location("ElHierro", 27.796215355055317, -17.933581891999527));
 
 
-
-		// Create Database for Weather
 		String dbPath = "database/openWeatherStore.db";
-		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath);
-		String apiKey = "b169eec36555fece973ebe8060054eb9";
+		String apiKey = ReadFromTxt.getApiKey("src/main/resources/ApiKey.txt");
 		String url = "https://api.openweathermap.org/data/2.5/forecast";
+
+		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath);
 		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey, url);
 
 		List<Instant> instantsList =instantList.getInstantList(5, 12);
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
 
-		// La siguiente linea esta comentada para que no se cree otro nuevo database
-		//openWeatherMapController.createWeatherDatabase();
+		// openWeatherMapController.createWeatherDatabase();
 		openWeatherMapController.insertWeatherIntoDatabase(instantsList);
-
-
 	}
 
 }

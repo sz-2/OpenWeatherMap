@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="model and control definition">
+    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/control/ReadFromTxt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699724039991</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="sqlite database connection">
+      <created>1699727089762</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699727089762</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="model and control definition" />
-    <option name="LAST_COMMIT_MESSAGE" value="model and control definition" />
+    <MESSAGE value="sqlite database connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="sqlite database connection" />
   </component>
 </project>

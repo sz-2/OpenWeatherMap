@@ -1,15 +1,14 @@
 package control;
 
-
 import model.Location;
 import model.Weather;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,49 +16,36 @@ import java.util.List;
 
 public class OpenWeatherMapSupplier implements WeatherSupplier{
 
-	// Replace "{API key}" with your actual OpenWeatherMap API key
 	private String apiKey;
-	private String url;
+	private String urlBase;
 
 	public OpenWeatherMapSupplier(String apiKey, String url) {
 		this.apiKey = apiKey;
-		this.url = url;
+		this.urlBase = url;
 	}
 
 	public String getWeatherFromAPI(Location location){
 
-		StringBuilder response = new StringBuilder();
+		String url = Url.getUrl(this.urlBase, this.apiKey, location.getLatitude(), location.getLongitude());
+		String responseBody = null;
 
-		try {
+		try (CloseableHttpClient client = HttpClients.createDefault()) {
 
-			URL url = new URL(Url.getUrl(this.url, this.apiKey, location.getLatitude(), location.getLongitude()));
-			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-			connection.setRequestMethod("GET");
+			HttpGet httpGet = new HttpGet(url);
 
-			int responseCode = connection.getResponseCode();
-			System.out.println("Sending GET request to URL: " + url.toString());
-			System.out.println("Response Code: " + responseCode);
+			try (CloseableHttpResponse response = client.execute(httpGet)) {
 
-			if (responseCode == HttpURLConnection.HTTP_OK) {
-				BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-				String line;
+				int statusCode = response.getStatusLine().getStatusCode();
+				System.out.println("Response Code: " + statusCode);
 
-				while ((line = reader.readLine()) != null) {
-					response.append(line);
-				}
-				reader.close();
-
-				System.out.println(response.getClass());
-				// Process the response data as needed
-			} else {
-				System.out.println("GET request failed");
+				responseBody = EntityUtils.toString(response.getEntity());
 			}
 
-			connection.disconnect();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return response.toString();
+
+		return responseBody;
 	}
 
 
