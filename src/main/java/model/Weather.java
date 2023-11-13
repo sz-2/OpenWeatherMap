@@ -5,14 +5,14 @@ import java.time.Instant;
 public class Weather {
 
 	private final Instant ts;
-	private final double temperature;
-	private final double rain;
-	private final double humidity;
-	private final double clouds;
-	private final double windSpeed;
+	private final float temperature;
+	private final float rain;
+	private final float humidity;
+	private final float clouds;
+	private final float windSpeed;
 	private final Location location;
 
-	public Weather(Instant ts, double temperature, double rain, double humidity, double clouds, double windSpeed, Location location) {
+	public Weather(Instant ts, float temperature, float rain, float humidity, float clouds, float windSpeed, Location location) {
 		this.ts = ts;
 		this.temperature = temperature;
 		this.rain = rain;
@@ -26,23 +26,23 @@ public class Weather {
 		return ts;
 	}
 
-	public double getTemperature() {
+	public float getTemperature() {
 		return temperature;
 	}
 
-	public double getRain() {
+	public float getRain() {
 		return rain;
 	}
 
-	public double getHumidity() {
+	public float getHumidity() {
 		return humidity;
 	}
 
-	public double getClouds() {
+	public float getClouds() {
 		return clouds;
 	}
 
-	public double getWindSpeed() {
+	public float getWindSpeed() {
 		return windSpeed;
 	}
 

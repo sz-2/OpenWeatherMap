@@ -60,11 +60,11 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 			JSONObject weather = weathersJsonList.getJSONObject(index);
 			if (instatsList.contains(Instant.ofEpochSecond(weather.getLong("dt")))){
 				Instant ts = Instant.ofEpochSecond(weather.getLong("dt"));
-				double temp = weather.getJSONObject("main").getDouble("temp");
-				double rain = weather.getDouble("pop");
-				double humidity = weather.getJSONObject("main").getDouble("humidity");
-				double windSpeed = weather.getJSONObject("wind").getDouble("speed");
-				double clouds = weather.getJSONObject("clouds").getDouble("all");
+				float temp = weather.getJSONObject("main").getFloat("temp");
+				float rain = weather.getFloat("pop");
+				float humidity = weather.getJSONObject("main").getFloat("humidity");
+				float windSpeed = weather.getJSONObject("wind").getFloat("speed");
+				float clouds = weather.getJSONObject("clouds").getFloat("all");
 				weatherList.add(new Weather(ts, temp, rain, humidity, clouds, windSpeed, location));
 			}
 		}
