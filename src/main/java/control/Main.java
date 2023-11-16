@@ -29,11 +29,12 @@ public class Main {
 		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath);
 		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey, url);
 
-		List<Instant> instantsList =instantList.getInstantList(5, 12);
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
 
-		// openWeatherMapController.createWeatherDatabase();
-		openWeatherMapController.insertWeatherIntoDatabase(instantsList);
+
+		// añadir apikey en variable de entorno de INTELLIJ
+		// quitar clase ReadFromText y poner ReadLine en el main
+		// añadir temporizador en el weatherController
 	}
 
 }

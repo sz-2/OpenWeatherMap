@@ -1,11 +1,13 @@
 package control;
 
+import model.Location;
 import model.Weather;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 public class SqliteWeatherStore implements WeatherStore{
 	private String dbPath;
@@ -15,7 +17,42 @@ public class SqliteWeatherStore implements WeatherStore{
 		this.dbPath = dbPath;
 	}
 
+	public String getDbPath() {
+		return dbPath;
+	}
+
+	public void setDbPath(String dbPath) {
+		this.dbPath = dbPath;
+	}
+
 	@Override
+	public void saveWeathers(List<Weather> weathers) {
+
+		try(Connection connection = this.connect()) {
+			Statement statement = connection.createStatement();
+			for (Weather weather :  weathers){
+				this.insert(statement, weather.getLocation().getName(), weather);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+
+	}
+
+
+	public void createWeatherDatabase(List<Location> locationList){
+		try(Connection connection = this.connect()) {
+			Statement statement = connection.createStatement();
+			for(Location location : locationList){
+				this.createTable(statement, location.getName());
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+
+
 	public Connection connect() {
 		Connection conn = null;
 		try {
@@ -29,7 +66,7 @@ public class SqliteWeatherStore implements WeatherStore{
 	}
 
 
-	@Override
+
 	public void createTable(Statement statement, String tableName) throws SQLException {
 		statement.execute("CREATE TABLE IF NOT EXISTS " + tableName +
 				" (" +
@@ -42,7 +79,9 @@ public class SqliteWeatherStore implements WeatherStore{
 				");");
 	}
 
-	@Override
+
+	// modificar paar evitar la inyeccion de codigo en la base de datos
+	// hacer la preparacion de la string más seguro
 	public void insert(Statement statement, String tableName, Weather weather) throws SQLException {
 		statement.execute(String.format(
 				"INSERT OR REPLACE INTO %s (ts, temperature, humidity, rain, clouds, windSpeed) " +
@@ -56,6 +95,5 @@ public class SqliteWeatherStore implements WeatherStore{
 				weather.getWindSpeed()
 		));
 	}
-
 }
 

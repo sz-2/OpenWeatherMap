@@ -10,49 +10,31 @@ import java.time.Instant;
 import java.util.List;
 
 public class WeatherController {
-	private List<Location> locationList;
-	private WeatherStore weatherstore;
-	private WeatherSupplier weathersupplier;
+	private List<Location> locations;
+	private WeatherStore weatherStore;
+	private WeatherSupplier weatherSupplier;
 
-	public WeatherController(List<Location> locationList, WeatherStore weatherstore, WeatherSupplier weathersupplier) {
-		this.locationList = locationList;
-		this.weatherstore = weatherstore;
-		this.weathersupplier = weathersupplier;
+	public WeatherController(List<Location> locations, WeatherStore weatherstore, WeatherSupplier weathersupplier) {
+		this.locations = locations;
+		this.weatherStore = weatherstore;
+		this.weatherSupplier = weathersupplier;
 	}
 
-	public void setLocationList(List<Location> locationList) {
-		this.locationList = locationList;
+	public void setLocations(List<Location> locations) {
+		this.locations = locations;
 	}
 
-	public void setWeatherstore(WeatherStore weatherstore) {
-		this.weatherstore = weatherstore;
+	public void setWeatherStore(WeatherStore weatherStore) {
+		this.weatherStore = weatherStore;
 	}
 
-	public void setWeathersupplier(WeatherSupplier weathersupplier) {
-		this.weathersupplier = weathersupplier;
+	public void setWeatherSupplier(WeatherSupplier weatherSupplier) {
+		this.weatherSupplier = weatherSupplier;
 	}
 
-	public void createWeatherDatabase(){
-			try(Connection connection = weatherstore.connect()) {
-				Statement statement = connection.createStatement();
-				for(Location location : this.locationList){
-					weatherstore.createTable(statement, location.getName());
-				}
-			} catch (SQLException e) {
-				throw new RuntimeException(e);
-			}
-	}
-
-	public void insertWeatherIntoDatabase(List<Instant> instantsList){
-		try(Connection connection = weatherstore.connect()) {
-			Statement statement = connection.createStatement();
-			for(Location location : this.locationList){
-				for (Weather weather :  weathersupplier.getWeatherList(location,instantsList)){
-					weatherstore.insert(statement, location.getName(), weather);
-				}
-			}
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+	public void execute(){
+		List<Instant> instants = InstantList.getInstants(5, 12);
+		for (Location location : this.locations)
+		this.weatherStore.saveWeathers(this.weatherSupplier.getWeathers(location, instants));
 	}
 }

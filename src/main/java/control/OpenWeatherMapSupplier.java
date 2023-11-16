@@ -49,7 +49,7 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 	}
 
 
-	public List<Weather> getWeatherList(Location location, List<Instant>instatsList){
+	public List<Weather> getWeathers(Location location, List<Instant>instants){
 
 		List<Weather> weatherList = new ArrayList<>();
 
@@ -58,7 +58,7 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 
 		for (int index=0; index<weathersJsonList.length(); index++){
 			JSONObject weather = weathersJsonList.getJSONObject(index);
-			if (instatsList.contains(Instant.ofEpochSecond(weather.getLong("dt")))){
+			if (instants.contains(Instant.ofEpochSecond(weather.getLong("dt")))){
 				Instant ts = Instant.ofEpochSecond(weather.getLong("dt"));
 				float temp = weather.getJSONObject("main").getFloat("temp");
 				float rain = weather.getFloat("pop");
