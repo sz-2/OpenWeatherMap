@@ -1,11 +1,9 @@
 package control;
 
-import java.time.*;
 import java.io.IOException;
 import java.util.List;
 import model.Location;
 import java.util.ArrayList;
-
 
 
 public class Main {
@@ -22,19 +20,15 @@ public class Main {
 		canaryLocationList.add(new Location("ElHierro", 27.796215355055317, -17.933581891999527));
 
 
-		String dbPath = "database/openWeatherStore.db";
-		String apiKey = ReadFromTxt.getApiKey("src/main/resources/ApiKey.txt");
-		String url = "https://api.openweathermap.org/data/2.5/forecast";
+		String dbPath = System.getenv("PATH_DATABASE");
+		String apiKey = System.getenv("APIKEY");
+		String url = System.getenv("URL");
 
-		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath);
+		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath, canaryLocationList);
 		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey, url);
 
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
+		openWeatherMapController.executionTimer(1);
 
-
-		// añadir apikey en variable de entorno de INTELLIJ
-		// quitar clase ReadFromText y poner ReadLine en el main
-		// añadir temporizador en el weatherController
 	}
-
 }

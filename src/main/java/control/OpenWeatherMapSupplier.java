@@ -40,11 +40,9 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 
 				responseBody = EntityUtils.toString(response.getEntity());
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return responseBody;
 	}
 
