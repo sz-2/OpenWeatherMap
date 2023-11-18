@@ -2,7 +2,6 @@ package control;
 
 import model.Location;
 import model.Weather;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -10,21 +9,13 @@ import java.sql.Statement;
 import java.util.List;
 
 public class SqliteWeatherStore implements WeatherStore{
-	private String dbPath;
-	private List<Location> locations;
+	private  final String dbPath;
+	private final List<Location> locations;
 
 	public SqliteWeatherStore(String dbPath, List<Location> locations)
 	{
 		this.dbPath = dbPath;
 		this.locations = locations;
-	}
-
-	public String getDbPath() {
-		return dbPath;
-	}
-
-	public void setDbPath(String dbPath) {
-		this.dbPath = dbPath;
 	}
 
 	@Override

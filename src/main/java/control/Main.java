@@ -1,13 +1,12 @@
 package control;
 
-import java.io.IOException;
 import java.util.List;
 import model.Location;
 import java.util.ArrayList;
 
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 
 		List<Location> canaryLocationList = new ArrayList<>();
 		canaryLocationList.add(new Location("GranCanaria", 28.12310773930144, -15.437557899191749));
@@ -20,15 +19,14 @@ public class Main {
 		canaryLocationList.add(new Location("ElHierro", 27.796215355055317, -17.933581891999527));
 
 
-		String dbPath = System.getenv("PATH_DATABASE");
-		String apiKey = System.getenv("APIKEY");
-		String url = System.getenv("URL");
+		String dbPath = args[1];
+		String apiKey = args[0];
 
 		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath, canaryLocationList);
-		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey, url);
-
+		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey);
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
-		openWeatherMapController.executionTimer(1);
+
+		openWeatherMapController.executionTimer(6*60);
 
 	}
 }

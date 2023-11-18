@@ -4,16 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="Change attributes of weather to float type">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/DiagramClass.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/InstantList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Instants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Instants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Instants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/ReadFromTxt.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Url.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +62,16 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/Model" />
       <recent name="$PROJECT_DIR$/src/main/java/Control" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <envs>
-        <env name="APIKEY" value="b169eec36555fece973ebe8060054eb9" />
-        <env name="PATH_DATABASE" value="database/openWeatherStore.db" />
-        <env name="URL" value="https://api.openweathermap.org/data/2.5/forecast" />
-      </envs>
       <option name="MAIN_CLASS_NAME" value="control.Main" />
       <module name="OpenWeatherMap_FaridSanchez" />
+      <option name="PROGRAM_PARAMETERS" value="902b19af20c97be1b1e870d52422eece database/openWeatherStore.db" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="control.*" />
@@ -117,7 +118,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699912320710</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Timer Task implementation">
+      <created>1700249066853</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700249066853</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +143,7 @@
     <MESSAGE value="model and control definition" />
     <MESSAGE value="sqlite database connection" />
     <MESSAGE value="add new class to read APIKey from txt file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new class to read APIKey from txt file" />
+    <MESSAGE value="Timer Task implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer Task implementation" />
   </component>
 </project>

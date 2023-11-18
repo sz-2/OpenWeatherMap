@@ -1,9 +1,9 @@
 package model;
 
 public class Location {
-	private double latidude;
-	private double longitude;
-	private String name;
+	private final double latidude;
+	private final double longitude;
+	private final String name;
 
 	public Location(String name, double latidude, double longitude) {
 		this.name = name;

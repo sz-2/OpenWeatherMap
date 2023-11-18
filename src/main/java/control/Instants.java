@@ -4,7 +4,6 @@ import java.time.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Instants {
 	public static List<Instant> getInstants(int numberOfDays, int hour) {
 		List<Instant> instants = new ArrayList<>();
@@ -16,7 +15,6 @@ public class Instants {
 			instants.add(instant);
 			currentDateTime = currentDateTime.plusDays(1);
 		}
-
 		return instants;
 	}
 }
