@@ -8,6 +8,7 @@ import java.util.ArrayList;
 public class Main {
 	public static void main(String[] args) {
 
+		/*
 		List<Location> canaryLocationList = new ArrayList<>();
 		canaryLocationList.add(new Location("GranCanaria", 28.12310773930144, -15.437557899191749));
 		canaryLocationList.add(new Location("Fuerteventura", 28.500888314467048, -13.862309602591422));
@@ -27,6 +28,8 @@ public class Main {
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
 
 		openWeatherMapController.executionTimer(6*60);
+
+		 */
 
 	}
 }

@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface WeatherSupplier {
 	List<Weather> getWeathers(Location location, List<Instant>instants);
+
+	String getProviderName();
 }

@@ -16,9 +16,15 @@ import java.util.List;
 
 public class OpenWeatherMapSupplier implements WeatherSupplier{
 	private final String apiKey;
+	private final String providerName;
 
-	public OpenWeatherMapSupplier(String apiKey) {
+	public OpenWeatherMapSupplier(String apiKey, String providerName) {
 		this.apiKey = apiKey;
+		this.providerName = providerName;
+	}
+
+	public String getProviderName() {
+		return providerName;
 	}
 
 	public String getJsonFromAPI(Location location){

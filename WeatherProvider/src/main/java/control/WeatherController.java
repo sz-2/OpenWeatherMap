@@ -1,6 +1,8 @@
 package control;
 
 import model.Location;
+import model.Event;
+
 import java.time.Instant;
 import java.util.List;
 import java.util.Timer;
@@ -8,18 +10,17 @@ import java.util.TimerTask;
 
 public class WeatherController {
 	private final List<Location> locations;
-	private final WeatherStore weatherStore;
 	private final WeatherSupplier weatherSupplier;
 
-	public WeatherController(List<Location> locations, WeatherStore weatherstore, WeatherSupplier weathersupplier){
+	public WeatherController(List<Location> locations, WeatherSupplier weathersupplier, Event event){
 		this.locations = locations;
-		this.weatherStore = weatherstore;
 		this.weatherSupplier = weathersupplier;
 	}
 	public void execute() {
+		Event event = new Event(this.weatherSupplier.getProviderName(), Instant.now());
 		List<Instant> instants = Instants.getInstants(5, 12);
 		for (Location location : this.locations) {
-			this.weatherStore.saveWeathers(this.weatherSupplier.getWeathers(location, instants));
+			event.addWeatherPrediction(this.weatherSupplier.getWeathers(location, instants));
 		}
 	}
 	public void executionTimer(int minutes){
