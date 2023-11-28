@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherProvider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Event.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DiagramClass.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Instants.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Instants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/SqliteWeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Url.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Instants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Instants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Url.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,19 +35,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SET_USER_NAME_GLOBALLY" value="false" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="08ddeeca-03ac-485d-af49-ad4e888bd25a" />
-        <option name="url" value="https://github.com/sz-2/OpenWeatherMap.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -64,22 +48,20 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/faridsanchez/IdeaProjects/DACD_proyect/OpenWeatherMap",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/faridsanchez/IdeaProjects/DACD_proyect/OpenWeatherMap&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/WeatherProvider" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java/Model" />
       <recent name="$PROJECT_DIR$/src/main/java/Control" />
@@ -92,7 +74,7 @@
       <option name="PROGRAM_PARAMETERS" value="902b19af20c97be1b1e870d52422eece database/openWeatherStore.db" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.*" />
+          <option name="PATTERN" value="control.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -143,14 +125,7 @@
       <option name="project" value="LOCAL" />
       <updated>1700249066853</updated>
     </task>
-    <task id="LOCAL-00005" summary="add README">
-      <created>1700350691848</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1700350691848</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,7 +144,6 @@
     <MESSAGE value="sqlite database connection" />
     <MESSAGE value="add new class to read APIKey from txt file" />
     <MESSAGE value="Timer Task implementation" />
-    <MESSAGE value="add README" />
-    <option name="LAST_COMMIT_MESSAGE" value="add README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Timer Task implementation" />
   </component>
 </project>

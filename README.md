@@ -29,13 +29,10 @@ de decimales es mucho mayor puesto que se necasita una mayor presición, se ha u
 
 ### Recursos utilizados
 
-Este programa ha sido desarrollado a través de un proyecto Maven, en el entorno de desarrollo intellij IDEA con el JDK 17 de Java.
-Además se ha utilizado la herramienta de control de versiones Git y su repositorio web, GitHub, con el fin de garantizar la peristencia
-de todas las modificaciones realizadas. 
+Este programa ha sido desarrollado a través de un proyecto Maven, en el entorno de desarrollo intellij IDEA. Además se ha utilizado
+la herramienta de control de versiones Git y su repositorio web, GitHub, con el fin de garantizar la peristencia de todas las modificaciones
+realizadas. 
 
-Cabe destacar el uso de la dependencia **sqlite-jdbc** para gestionar la conexión con la base de datos Sqlite, **httpclient** para 
-establecer la conexión con la API de Open Weather Map y **json** para poder acceder a la cadena de caracteres serializada en formato
-JSON y extraer la información que necesitamos.
 
 ****
 
