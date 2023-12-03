@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/DiagramClass.jpg" afterDir="false" />
+    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="add README">
+      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/EventStore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Instants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Instants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/SqliteWeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/Url.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/Url.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/control/WeatherSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +65,40 @@
       <recent name="$PROJECT_DIR$/src/main/java/Control" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.EventStore">
+    <configuration name="Consumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="control.Consumer" />
+      <module name="WeatherProvider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EventStore" />
+      <module name="OpenWeatherMap_FaridSanchez" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JMSWeatherStore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="control.JMSWeatherStore" />
+      <module name="WeatherProvider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="control.Main" />
       <module name="OpenWeatherMap_FaridSanchez" />
@@ -82,8 +113,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Producer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="control.Producer" />
+      <module name="WeatherProvider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="control.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EventStore" />
+        <item itemvalue="Application.JMSWeatherStore" />
+        <item itemvalue="Application.Producer" />
+        <item itemvalue="Application.Consumer" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -125,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1700249066853</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Revert &quot;README modification&quot;&#10;&#10;This reverts commit a3b6c087">
+      <created>1701191543408</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701191543408</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +199,7 @@
     <MESSAGE value="sqlite database connection" />
     <MESSAGE value="add new class to read APIKey from txt file" />
     <MESSAGE value="Timer Task implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Timer Task implementation" />
+    <MESSAGE value="Revert &quot;README modification&quot;&#10;&#10;This reverts commit a3b6c087" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;README modification&quot;&#10;&#10;This reverts commit a3b6c087" />
   </component>
 </project>

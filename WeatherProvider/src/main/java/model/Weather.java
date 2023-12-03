@@ -4,7 +4,9 @@ import java.time.Instant;
 
 public class Weather {
 
+	private final String ss;
 	private final Instant ts;
+	private final Instant predictionTime;
 	private final float temperature;
 	private final float rain;
 	private final float humidity;
@@ -12,8 +14,10 @@ public class Weather {
 	private final float windSpeed;
 	private final Location location;
 
-	public Weather(Instant ts, float temperature, float rain, float humidity, float clouds, float windSpeed, Location location) {
-		this.ts = ts;
+	public Weather(Instant predictionTime, float temperature, float rain, float humidity, float clouds, float windSpeed, Location location) {
+		this.ss = "Open Weather Map";
+		this.ts = Instant.now();
+		this.predictionTime = predictionTime;
 		this.temperature = temperature;
 		this.rain = rain;
 		this.humidity = humidity;
