@@ -15,7 +15,7 @@ public class Weather {
 	private final Location location;
 
 	public Weather(Instant predictionTime, float temperature, float rain, float humidity, float clouds, float windSpeed, Location location) {
-		this.ss = "Open Weather Map";
+		this.ss = "OpenWeatherMap";
 		this.ts = Instant.now();
 		this.predictionTime = predictionTime;
 		this.temperature = temperature;
@@ -29,27 +29,21 @@ public class Weather {
 	public Instant getTs() {
 		return ts;
 	}
-
 	public float getTemperature() {
 		return temperature;
 	}
-
 	public float getRain() {
 		return rain;
 	}
-
 	public float getHumidity() {
 		return humidity;
 	}
-
 	public float getClouds() {
 		return clouds;
 	}
-
 	public float getWindSpeed() {
 		return windSpeed;
 	}
-
 	public Location getLocation() {
 		return location;
 	}

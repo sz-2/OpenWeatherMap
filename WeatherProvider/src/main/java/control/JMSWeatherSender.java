@@ -1,11 +1,16 @@
 package control;
 
+
+import com.google.gson.*;
 import jakarta.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 import model.Weather;
+
+import java.lang.reflect.Type;
+import java.time.Instant;
 import java.util.List;
 
-public class JMSWeatherStore implements WeatherStore{
+public class JMSWeatherSender implements WeatherStore{
 
 	private Connection connection;
 
@@ -15,13 +20,26 @@ public class JMSWeatherStore implements WeatherStore{
 	private String brokerURL;
 	private String destinationName;
 
-	public JMSWeatherStore(String brokerURL, String destinationName) {
+	public JMSWeatherSender(String brokerURL, String destinationName) {
 		this.brokerURL = brokerURL;
 		this.destinationName = destinationName;
 	}
 
 	@Override
 	public void saveWeathers(List<Weather> weathers) {
+		for (Weather weather : weathers){
+			prepareProducer();
+			sendEvent(WeatherToJson(weather));
+			close();
+		}
+	}
+
+	// Custom serializer for Instant class
+	private static class InstantSerializer implements JsonSerializer<Instant> {
+		@Override
+		public JsonElement serialize(Instant instant, Type type, JsonSerializationContext jsonSerializationContext) {
+			return new JsonPrimitive(instant.toString());
+		}
 	}
 
 	public void prepareProducer() {
@@ -57,12 +75,13 @@ public class JMSWeatherStore implements WeatherStore{
 		}
 	}
 
-	public static void main(String[] args) {
-		String brokerURL = "tcp://localhost:61616";
-		String destinationName = "WeatherTopic";
+	public String WeatherToJson(Weather weather){
+		Gson gson = new GsonBuilder()
+				.registerTypeAdapter(Instant.class, new InstantSerializer())
+				.create();
+		return gson.toJson(weather);
 
-		JMSWeatherStore eventProducer = new JMSWeatherStore(brokerURL, destinationName);
-		eventProducer.sendEvent("Event data goes here3.");
-		eventProducer.close();
 	}
 }
+
+

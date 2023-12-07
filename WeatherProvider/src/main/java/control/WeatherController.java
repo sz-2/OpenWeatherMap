@@ -22,6 +22,7 @@ public class WeatherController {
 		for (Location location : this.locations) {
 			this.weatherStore.saveWeathers(this.weatherSupplier.getWeathers(location, instants));
 		}
+		System.out.println("successful execute");
 	}
 
 	public void executionTimer(int minutes){
@@ -31,7 +32,6 @@ public class WeatherController {
 			@Override
 			public void run() {
 				execute();
-				System.out.println("Las predicciones se han almacenado con éxito.");
 			}
 		};
 

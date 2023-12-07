@@ -28,7 +28,7 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 	}
 
 	public String getJsonFromAPI(Location location){
-		String url = Url.getUrl(this.apiKey, location.getLatitude(), location.getLongitude());
+		String url = this.urlBuilder(this.apiKey, location.getLatitude(), location.getLongitude());
 		String responseBody = null;
 		try (CloseableHttpClient client = HttpClients.createDefault()) {
 			HttpGet httpGet = new HttpGet(url);
@@ -47,9 +47,9 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 		JSONObject jsonFromApi = new JSONObject(getJsonFromAPI(location));
 		JSONArray weatherJsonList = jsonFromApi.getJSONArray("list");
 
-		for (int index=0; index<weatherJsonList.length(); index++){
+		for (int index=0; index<weatherJsonList.length(); index++) {
 			JSONObject weather = weatherJsonList.getJSONObject(index);
-			if (instants.contains(Instant.ofEpochSecond(weather.getLong("dt")))){
+			if (instants.contains(Instant.ofEpochSecond(weather.getLong("dt")))) {
 				Instant predictionTime = Instant.ofEpochSecond(weather.getLong("dt"));
 				float temp = weather.getJSONObject("main").getFloat("temp");
 				float rain = weather.getFloat("pop");
@@ -60,6 +60,10 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 			}
 		}
 		return weathers;
+	}
+
+	private String urlBuilder(String apiKey,Double latitude, Double longitude){
+		return String.format("https://api.openweathermap.org/data/2.5/forecast?lat=%s&lon=%s&appid=%s&units=metric",latitude, longitude, apiKey);
 	}
 }
 

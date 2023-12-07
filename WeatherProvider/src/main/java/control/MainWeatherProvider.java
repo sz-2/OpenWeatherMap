@@ -4,11 +4,9 @@ import java.util.List;
 import model.Location;
 import java.util.ArrayList;
 
-
-public class Main {
+public class MainWeatherProvider {
 	public static void main(String[] args) {
 
-		/*
 		List<Location> canaryLocationList = new ArrayList<>();
 		canaryLocationList.add(new Location("GranCanaria", 28.12310773930144, -15.437557899191749));
 		canaryLocationList.add(new Location("Fuerteventura", 28.500888314467048, -13.862309602591422));
@@ -19,17 +17,14 @@ public class Main {
 		canaryLocationList.add(new Location("LaPalma", 28.683822052212975, -17.765305651911973));
 		canaryLocationList.add(new Location("ElHierro", 27.796215355055317, -17.933581891999527));
 
-
-		String dbPath = args[1];
 		String apiKey = args[0];
+		String brokerURL = args[1];
+		String topicName = args[2];
 
-		SqliteWeatherStore sqliteCanaryWeatherStore = new SqliteWeatherStore(dbPath, canaryLocationList);
-		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey);
-		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, sqliteCanaryWeatherStore,  canaryMapSupplier);
+		OpenWeatherMapSupplier canaryMapSupplier = new OpenWeatherMapSupplier(apiKey, "OpenWeatherMap");
+		JMSWeatherSender weatherStore = new JMSWeatherSender(brokerURL, topicName);
+		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, canaryMapSupplier, weatherStore);
 
-		openWeatherMapController.executionTimer(6*60);
-
-		 */
-
+		openWeatherMapController.executionTimer(1);
 	}
 }
