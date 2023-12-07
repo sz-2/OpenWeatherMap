@@ -2,10 +2,6 @@
 import jakarta.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import java.util.Random;
-import java.util.concurrent.CompletableFuture;
-
-
 public class TopicEventSubscriber implements Subscriber {
 
 	private final String brokerURL;

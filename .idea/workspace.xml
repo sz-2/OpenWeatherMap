@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="add README">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/EventStoreBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/FileEventStoreBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/MainEventStoreBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/Subscriber.java" afterDir="false" />
+    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="WeatherProvider">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/EventStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/TopicEventSubscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/MainWeatherProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/TopicEventSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/TopicEventSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherSender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Url.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" afterDir="false" />
     </list>
@@ -198,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701191543408</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="(EventStoreBuilder): creating interfaces and implementations">
+      <option name="closed" value="true" />
+      <created>1701970721280</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701970721280</updated>
+    </task>
+    <task id="LOCAL-00007" summary="WeatherProvider">
+      <option name="closed" value="true" />
+      <created>1701970785316</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701970785316</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +226,8 @@
     <MESSAGE value="add new class to read APIKey from txt file" />
     <MESSAGE value="Timer Task implementation" />
     <MESSAGE value="Revert &quot;README modification&quot;&#10;&#10;This reverts commit a3b6c087" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;README modification&quot;&#10;&#10;This reverts commit a3b6c087" />
+    <MESSAGE value="(EventStoreBuilder): creating interfaces and implementations" />
+    <MESSAGE value="WeatherProvider" />
+    <option name="LAST_COMMIT_MESSAGE" value="WeatherProvider" />
   </component>
 </project>
