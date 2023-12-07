@@ -56,7 +56,7 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 				float humidity = weather.getJSONObject("main").getFloat("humidity");
 				float windSpeed = weather.getJSONObject("wind").getFloat("speed");
 				float clouds = weather.getJSONObject("clouds").getFloat("all");
-				weathers.add(new Weather(predictionTime, temp, rain, humidity, clouds, windSpeed, location));
+				weathers.add(new Weather(this.providerName, predictionTime, temp, rain, humidity, clouds, windSpeed, location));
 			}
 		}
 		return weathers;

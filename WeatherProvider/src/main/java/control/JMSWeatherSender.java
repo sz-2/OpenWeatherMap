@@ -17,8 +17,8 @@ public class JMSWeatherSender implements WeatherStore{
 	private Session session;
 	private MessageProducer producer;
 
-	private String brokerURL;
-	private String destinationName;
+	private final String brokerURL;
+	private final String destinationName;
 
 	public JMSWeatherSender(String brokerURL, String destinationName) {
 		this.brokerURL = brokerURL;
