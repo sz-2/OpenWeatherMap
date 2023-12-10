@@ -4,29 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="EventStoreBuilder: code fixes">
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/EventStoreBuilder.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventStoreBuilder/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherProvider/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WeatherProvider/WeatherProvider.jpg" afterDir="false" />
+    <list default="true" id="8d4378a6-a0d9-4ba7-9561-f67a10521955" name="Changes" comment="final version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/EventStoreBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/EventStoreBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/FileEventStoreBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/FileEventStoreBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/MainEventStoreBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/MainEventStoreBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/TopicEventSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventStoreBuilder/src/main/java/TopicEventSubscriber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Instants.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/Instants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/JMSWeatherSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/MainWeatherProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/MainWeatherProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/OpenWeatherMapSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherSupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/control/WeatherSupplier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherProvider/src/main/java/model/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DiagramClass.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +221,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701971249499</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="final version">
+      <option name="closed" value="true" />
+      <created>1702236358933</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702236358933</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +253,7 @@
     <MESSAGE value="WeatherProvider" />
     <MESSAGE value="WeatherProvider: code fixes" />
     <MESSAGE value="EventStoreBuilder: code fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="EventStoreBuilder: code fixes" />
+    <MESSAGE value="final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version" />
   </component>
 </project>
