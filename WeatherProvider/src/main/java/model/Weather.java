@@ -3,7 +3,6 @@ package model;
 import java.time.Instant;
 
 public class Weather {
-
 	private final String ss;
 	private final Instant ts;
 	private final Instant predictionTime;

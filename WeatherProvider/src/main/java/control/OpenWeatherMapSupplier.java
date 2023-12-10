@@ -13,21 +13,16 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class OpenWeatherMapSupplier implements WeatherSupplier{
+public class OpenWeatherMapSupplier implements WeatherSupplier {
 	private final String apiKey;
-	private final String providerName;
+	private final String ss;
 
-	public OpenWeatherMapSupplier(String apiKey, String providerName) {
+	public OpenWeatherMapSupplier(String apiKey, String ss) {
 		this.apiKey = apiKey;
-		this.providerName = providerName;
+		this.ss = ss;
 	}
 
-	public String getProviderName() {
-		return providerName;
-	}
-
-	public String getJsonFromAPI(Location location){
+	public String getJsonFromAPI(Location location) {
 		String url = this.urlBuilder(this.apiKey, location.getLatitude(), location.getLongitude());
 		String responseBody = null;
 		try (CloseableHttpClient client = HttpClients.createDefault()) {
@@ -42,12 +37,12 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 	}
 
 
-	public List<Weather> getWeathers(Location location, List<Instant>instants){
+	public List<Weather> getWeathers(Location location, List<Instant> instants) {
 		List<Weather> weathers = new ArrayList<>();
 		JSONObject jsonFromApi = new JSONObject(getJsonFromAPI(location));
 		JSONArray weatherJsonList = jsonFromApi.getJSONArray("list");
 
-		for (int index=0; index<weatherJsonList.length(); index++) {
+		for (int index = 0; index < weatherJsonList.length(); index++) {
 			JSONObject weather = weatherJsonList.getJSONObject(index);
 			if (instants.contains(Instant.ofEpochSecond(weather.getLong("dt")))) {
 				Instant predictionTime = Instant.ofEpochSecond(weather.getLong("dt"));
@@ -56,14 +51,14 @@ public class OpenWeatherMapSupplier implements WeatherSupplier{
 				float humidity = weather.getJSONObject("main").getFloat("humidity");
 				float windSpeed = weather.getJSONObject("wind").getFloat("speed");
 				float clouds = weather.getJSONObject("clouds").getFloat("all");
-				weathers.add(new Weather(this.providerName, predictionTime, temp, rain, humidity, clouds, windSpeed, location));
+				weathers.add(new Weather(this.ss, predictionTime, temp, rain, humidity, clouds, windSpeed, location));
 			}
 		}
 		return weathers;
 	}
 
-	private String urlBuilder(String apiKey,Double latitude, Double longitude){
-		return String.format("https://api.openweathermap.org/data/2.5/forecast?lat=%s&lon=%s&appid=%s&units=metric",latitude, longitude, apiKey);
+	private String urlBuilder(String apiKey, Double latitude, Double longitude) {
+		return String.format("https://api.openweathermap.org/data/2.5/forecast?lat=%s&lon=%s&appid=%s&units=metric", latitude, longitude, apiKey);
 	}
 }
 

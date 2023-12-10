@@ -1,6 +1,6 @@
 <div style="text-align: justify">
 
-# Practica 1: Captura de datos de Open Weather Map
+# Practice 2. Incorporation of data into the system architecture.
 ##### Universidad de las Palmas de Gran Canaria
 ##### Curso 2023/2024
 ##### Asignatura: Desarrollo de Aplicaciones para Ciencias de Datos
@@ -8,48 +8,26 @@
 
 ***
 
-### Resumen de la funcionalidad.
+### Summary of functionality
 
-Esta aplicación Java tiene como función la recopilación de datos meteorológicos predictivos para las 8 islas Canarias. Para ello 
-se ha utilizado una API REST de Open Weather Map, la cual nos permite obtener los datos predictivos de los proximos 4 días desde cuando
- se realiza la consulta, en intervalos de 3 horas. En este caso solo se han escogido aquellas predicciones correspondientes a las 12 PM.
-Estos datos se almacenan en una base de datos Sqlite y se van actualizado en caso de haber modificaciones para las mismas fechas en las proximas
-capturas.
-
-Los datos meteorologicos predictivos están compuestos por la temperatura (en grados Celsius), la probabilidad de precipitaciones, 
-el porcentaje de humedad, el procentaje de nubes y la velocidad del viento. El formato utilizado para manejar estas variables ha sido
-el "Float" pues la precisión de decimales que nos ofrece este formato es más que suficiente para trabajar con porcentajes, así como
-también es más eficiente a la hora de almacenar puesto que ocupa menos espacio.
-
-Con respecto a la localización, se ha escogido las latitudes y longitudes de las capitales de cada isla. En este caso, como la cantidad
-de decimales es mucho mayor puesto que se necasita una mayor presición, se ha utilizado el formato "Double".
-
-
-***
-
-### Recursos utilizados
-
-Este programa ha sido desarrollado a través de un proyecto Maven, en el entorno de desarrollo intellij IDEA. Además se ha utilizado
-la herramienta de control de versiones Git y su repositorio web, GitHub, con el fin de garantizar la peristencia de todas las modificaciones
-realizadas. 
-
+This Java application is designed to retrieve meteorological data from the eight Canary Islands and store them in a directory. 
+For this purpose, three modules are used: one for data capture (Weather Provider), another for storage (Event Store Builder), and a broker 
+that serves as an intermediary, managing the transmission of events between the preceding modules
 
 ****
 
-### Diseño
+### Resources used
 
-En este programa se ha aplicado el patrón modelo-control. Por un lado, en el modelo se definien las clases Weather y Location, entre
-las cuales existen una asociación pues la clase Weather tiene un atributo de tipo Location. 
-Por otro lado, en el control se definen todas aquellas clases e interfaces que realizan operaciones sobre el modelo. En este caso, 
-se definen dos interfaces, una para la extracción de información de la API REST de Open Weather Map (WeatherSupplier) y otra para el
-almacenamiento en la base de datos Sqlite (WeatherStore). El WeatherController es el nexo de unión entre estas dos interfaces y además les 
-provee la información necesaria para que puedan funcionar, una lista de localizaciones y otra con elementos de tipo Instant (que indican
-la fecha y hora para la cual se solicita los datos de predicción).
+This program has been developed through a Maven project in the IntelliJ IDEA development environment. Additionally, Git version
+control tool and its web repository, GitHub, have been used to ensure the persistence of all modifications made.
 
+ActiveMQ was used as a broker, an open-source message broker that implements the Java Message Service (JMS) API, providing a
+reliable and scalable messaging solution. It supports various messaging patterns, including point-to-point and publish/subscribe,
+and it enables the exchange of messages between different components in a decoupled manner.
 
-### Diagrama de clases
+On the following page, you will find the getting started guide and installation documentation for ActiveMQ, https://activemq.apache.org/getting-started
 
-![](DiagramClass.jpg)
+****
 
 </div>
 

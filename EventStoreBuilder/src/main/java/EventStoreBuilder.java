@@ -1,3 +1,3 @@
 public interface EventStoreBuilder {
-	void save(String message);
+	void saveEvent(String message);
 }

@@ -1,25 +1,21 @@
-
 import jakarta.jms.*;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
 public class TopicEventSubscriber implements Subscriber {
-
 	private final String brokerURL;
 	private final String topicName;
 	private final String clientID;
-	private final FileEventStoreBuilder writeEvent;
-	private int count = 0;
+	private final FileEventStoreBuilder fileEventStore;
 
-
-	public TopicEventSubscriber(String brokerURL, String topicName, String clientID, FileEventStoreBuilder writeEvent) {
+	public TopicEventSubscriber(String brokerURL, String topicName, String clientID, FileEventStoreBuilder fileEventStore) {
 		this.brokerURL = brokerURL;
 		this.topicName = topicName;
 		this.clientID = clientID;
-		this.writeEvent = writeEvent;
+		this.fileEventStore = fileEventStore;
 	}
 
 	public void startListening() {
-		try{
+		try {
 			TopicSubscriber subscriber = this.createConnection();
 			MessageListener messageListener = messageListener();
 			subscriber.setMessageListener(messageListener);
@@ -28,9 +24,9 @@ public class TopicEventSubscriber implements Subscriber {
 		}
 	}
 
-	private TopicSubscriber createConnection(){
+	private TopicSubscriber createConnection() {
 		TopicSubscriber subscriber = null;
-		try{
+		try {
 			ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(this.brokerURL);
 			Connection connection = connectionFactory.createConnection();
 			connection.setClientID(clientID);
@@ -38,22 +34,18 @@ public class TopicEventSubscriber implements Subscriber {
 			Session session = connection.createSession(false, Session.CLIENT_ACKNOWLEDGE);
 			Topic topic = session.createTopic(this.topicName);
 			subscriber = session.createDurableSubscriber(topic, subscriptionName());
-		}catch (JMSException e){
+		} catch (JMSException e) {
 			e.printStackTrace();
 		}
 		return subscriber;
 	}
 
-	private MessageListener messageListener(){
+	private MessageListener messageListener() {
 		return message -> {
 			try {
-				if (message instanceof TextMessage) {
-					TextMessage textMessage = (TextMessage) message;
+				if (message instanceof TextMessage textMessage) {
 					String eventData = textMessage.getText();
-					this.writeEvent.save(eventData);
-					count++;
-					System.out.println(this.count);
-					// Acknowledge the message
+					this.fileEventStore.saveEvent(eventData);
 					message.acknowledge();
 				}
 			} catch (JMSException e) {

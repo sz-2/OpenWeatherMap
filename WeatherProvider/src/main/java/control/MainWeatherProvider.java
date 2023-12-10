@@ -1,8 +1,9 @@
 package control;
 
-import java.util.List;
 import model.Location;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainWeatherProvider {
 	public static void main(String[] args) {
@@ -25,6 +26,6 @@ public class MainWeatherProvider {
 		JMSWeatherSender weatherStore = new JMSWeatherSender(brokerURL, topicName);
 		WeatherController openWeatherMapController = new WeatherController(canaryLocationList, canaryMapSupplier, weatherStore);
 
-		openWeatherMapController.executionTimer(1);
+		openWeatherMapController.executionTimer(6*60);
 	}
 }

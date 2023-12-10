@@ -1,61 +1,48 @@
 package control;
 
-
 import com.google.gson.*;
 import jakarta.jms.*;
-import org.apache.activemq.ActiveMQConnectionFactory;
 import model.Weather;
-
+import org.apache.activemq.ActiveMQConnectionFactory;
 import java.lang.reflect.Type;
 import java.time.Instant;
 import java.util.List;
 
-public class JMSWeatherSender implements WeatherStore{
-
+public class JMSWeatherSender implements WeatherStore {
+	private final String brokerUrl;
+	private final String topicName;
 	private Connection connection;
-
 	private Session session;
 	private MessageProducer producer;
 
-	private final String brokerURL;
-	private final String destinationName;
-
-	public JMSWeatherSender(String brokerURL, String destinationName) {
-		this.brokerURL = brokerURL;
-		this.destinationName = destinationName;
+	public JMSWeatherSender(String brokerUrl, String topicName) {
+		this.brokerUrl = brokerUrl;
+		this.topicName = topicName;
 	}
 
 	@Override
 	public void saveWeathers(List<Weather> weathers) {
-		for (Weather weather : weathers){
+		for (Weather weather : weathers) {
 			prepareProducer();
-			sendEvent(WeatherToJson(weather));
+			sendEvent(weatherToJson(weather));
 			close();
 		}
 	}
 
-	// Custom serializer for Instant class
-	private static class InstantSerializer implements JsonSerializer<Instant> {
-		@Override
-		public JsonElement serialize(Instant instant, Type type, JsonSerializationContext jsonSerializationContext) {
-			return new JsonPrimitive(instant.toString());
-		}
-	}
-
-	public void prepareProducer() {
+	private void prepareProducer() {
 		try {
-			ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(this.brokerURL);
+			ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(this.brokerUrl);
 			connection = connectionFactory.createConnection();
 			connection.start();
 			session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
-			Destination destination = session.createTopic(this.destinationName);
+			Destination destination = session.createTopic(this.topicName);
 			producer = session.createProducer(destination);
 		} catch (JMSException e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void sendEvent(String eventData) {
+	private void sendEvent(String eventData) {
 		try {
 			this.prepareProducer();
 			TextMessage eventMessage = session.createTextMessage(eventData);
@@ -65,7 +52,7 @@ public class JMSWeatherSender implements WeatherStore{
 		}
 	}
 
-	public void close() {
+	private void close() {
 		try {
 			producer.close();
 			session.close();
@@ -75,12 +62,19 @@ public class JMSWeatherSender implements WeatherStore{
 		}
 	}
 
-	public String WeatherToJson(Weather weather){
+	public String weatherToJson(Weather weather) {
 		Gson gson = new GsonBuilder()
 				.registerTypeAdapter(Instant.class, new InstantSerializer())
 				.create();
 		return gson.toJson(weather);
 
+	}
+
+	private static class InstantSerializer implements JsonSerializer<Instant> {
+		@Override
+		public JsonElement serialize(Instant instant, Type type, JsonSerializationContext jsonSerializationContext) {
+			return new JsonPrimitive(instant.toString());
+		}
 	}
 }
 

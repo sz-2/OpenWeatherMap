@@ -1,6 +1,7 @@
 package control;
 
 import model.Weather;
+
 import java.util.List;
 
 public interface WeatherStore {
